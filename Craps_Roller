@@ -1,0 +1,116 @@
+# Import numpy and set seed
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(356)
+
+roll1 = []
+
+for x in range(10) :
+    dice = max(2, np.random.randint(1,7)+ np.random.randint(1,7))
+    roll1.append(dice)
+
+np.random.seed(344)
+
+roll2 = []
+
+for x in range(20) :
+    dice = max(2, np.random.randint(1,7)+np.random.randint(1,7))
+    roll2.append(dice)
+    
+    
+np.random.seed(674)
+
+roll3 = []
+
+for x in range(30) :
+    dice = max(2, np.random.randint(1,7)+np.random.randint(1,7))
+    roll3.append(dice)
+    
+    
+np.random.seed(444)
+
+roll4 = []
+
+for x in range(40) :
+    dice = max(2, np.random.randint(1,7)+np.random.randint(1,7))
+    roll4.append(dice)
+    
+np.random.seed(222)
+
+roll5 = []
+
+for x in range(1000) :
+    dice = max(2, np.random.randint(1,7)+np.random.randint(1,7))
+    roll5.append(dice)
+    
+roll1s = roll1.count(7)
+
+roll1all = len(roll1)
+
+roll1div = float(roll1s)/float(roll1all)
+
+roll2s = roll2.count(7)
+
+roll2all = len(roll2)
+
+roll2div = float(roll2s)/float(roll2all)
+    
+roll3s = roll3.count(7)
+
+roll3all = len(roll3)
+
+roll3div = float(roll3s)/float(roll3all)
+
+roll4s = roll4.count(7)
+
+roll4all = len(roll4)
+
+roll4div = float(roll4s)/float(roll4all)
+
+roll5s = roll5.count(7)
+
+roll5all = len(roll5)
+
+roll5div = float(roll5s)/float(roll5all)
+
+print "{0:.0%}".format(roll1div)
+print "{0:.0%}".format(roll2div)
+print "{0:.0%}".format(roll3div)
+print "{0:.0%}".format(roll4div)
+print "{0:.0%}".format(roll5div)
+
+print(roll1.count(7))
+print(len(roll1))
+print(roll2.count(7))
+print(roll3.count(7))
+
+# Create histogram
+plt.figure(figsize=(10,8))
+plt.hist(roll1,bins=11,histtype = 'step', linewidth=2, label='1st Roll')
+plt.title('Craps')
+plt.xlabel('Number Rolled')
+plt.ylabel('Frequency')
+plt.legend()
+# Display histogram
+plt.show()
+
+# Create histogram
+plt.figure(figsize=(10,8))
+plt.hist(roll2,bins=11,histtype = 'step', linewidth=2, label='2nd Roll')
+plt.title('Craps')
+plt.xlabel('Number Rolled')
+plt.ylabel('Frequency')
+plt.legend()
+# Display histogram
+plt.show()
+
+# Create histogram 
+plt.figure(figsize=(10,8))
+plt.hist(roll3,bins=11,histtype = 'step', linewidth=2, label='3rd Roll')
+plt.title('Craps')
+plt.xlabel('Number Rolled')
+plt.ylabel('Frequency')
+plt.legend()
+# Display histogram
+plt.show()
